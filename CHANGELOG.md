@@ -4,6 +4,16 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project adheres
 to [Semantic Versioning](https://semver.org).
 
+## [0.2.0] - 2026-11-18
+
+### Added
+
+- `reflex mcp`: an MCP (Model Context Protocol) server on stdio — hand-rolled JSON-RPC, no new dependencies — exposing the brain to any MCP-capable AI agent (Kimi Code, Claude Code, Cursor, ...). Tools: `brain_stats`, `find_symbols`, `list_issues`, `outline_file`, `search_code`, `refresh_brain`, `ask_brain`. The server locates the brain by walking up from the agent's working directory.
+- README: "Use with AI agents (MCP)" setup section.
+
+[0.2.0]: https://github.com/ommaraziz/code-reflex/releases/tag/v0.2.0
+
+
 ## [0.1.0] - 2026-11-18
 
 ### Added
