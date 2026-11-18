@@ -100,6 +100,8 @@ pub enum Commands {
         /// The question, in quotes
         question: Vec<String>,
     },
+    /// Start an MCP server (stdio) so AI agents can query the brain
+    Mcp,
 }
 
 #[derive(Args)]

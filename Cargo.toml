@@ -1,6 +1,6 @@
 [package]
 name = "code-reflex"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "A persistent brain for your codebase: symbols, issues and hardcoded values - indexed, searchable, refreshed on change."
 license-file = "LICENSE"

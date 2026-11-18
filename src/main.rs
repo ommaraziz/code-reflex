@@ -4,6 +4,7 @@ mod db;
 mod extract;
 mod index;
 mod lang;
+mod mcp;
 mod query;
 mod watch;
 
@@ -146,7 +147,13 @@ fn main() -> Result<()> {
             if q.trim().is_empty() {
                 bail!("usage: reflex ask \"your question\"")
             }
-            ask::run_ask(&root, &conn, &q)
+            let answer = ask::run_ask(&root, &conn, &q)?;
+            println!("{answer}");
+            Ok(())
+        }
+        Commands::Mcp => {
+            let root = find_root(true).ok();
+            mcp::run_mcp(root)
         }
     }
 }

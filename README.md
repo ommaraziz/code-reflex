@@ -89,6 +89,34 @@ KIMI_MODEL=kimi-k2-0905-preview              # optional
 
 Examples of compatible setups: Kimi (as above), OpenAI (`https://api.openai.com/v1`, style `openai`), or a local model served through an Ollama/llama.cpp OpenAI-compatible proxy.
 
+## Use with AI agents (MCP)
+
+`reflex mcp` starts a [Model Context Protocol](https://modelcontextprotocol.io) server on stdio. Any MCP-capable agent — Kimi Code, Claude Code, Cursor, and others — can then query the brain directly; tools appear to the agent as `mcp__reflex__*`. No local paths needed in the config, just the command:
+
+```json
+{
+  "mcpServers": {
+    "reflex": { "command": "reflex", "args": ["mcp"] }
+  }
+}
+```
+
+- **Kimi Code**: save as `.kimi-code/mcp.json` in the project (per-repo) or `~/.kimi-code/mcp.json` (all projects); manage with `/mcp-config`, check status with `/mcp`
+- **Claude Code**: `claude mcp add reflex -- reflex mcp`
+- **Cursor**: paste the same `mcpServers` object into Cursor's MCP settings
+
+| Tool | Purpose |
+|---|---|
+| `brain_stats` | Size up the repo before exploring — call first |
+| `find_symbols` | Locate classes, enums, functions, constants by name/kind |
+| `list_issues` | Syntax errors, TODO/FIXME, magic numbers, hardcoded strings |
+| `outline_file` | Full map of one file before editing it |
+| `search_code` | Regex over contents when the index is not enough |
+| `refresh_brain` | Re-index after the agent edits code |
+| `ask_brain` | Natural-language Q&A with file:line citations |
+
+The server finds the brain by walking up from the agent's working directory, so index the project once first (`reflex init && reflex index`).
+
 ## How it works
 
 ```

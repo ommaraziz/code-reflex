@@ -76,7 +76,7 @@ fn dotenv_value(root: &Path, key: &str) -> Option<String> {
     None
 }
 
-pub fn run_ask(root: &Path, conn: &Connection, question: &str) -> Result<()> {
+pub fn run_ask(root: &Path, conn: &Connection, question: &str) -> Result<String> {
     let key = config_value(root, "KIMI_API_KEY").ok_or_else(|| {
         anyhow::anyhow!(
             "KIMI_API_KEY is not set.\n\
@@ -215,6 +215,5 @@ pub fn run_ask(root: &Path, conn: &Connection, question: &str) -> Result<()> {
             .map(String::from)
             .ok_or_else(|| anyhow::anyhow!("unexpected Kimi API response: {body}"))?
     };
-    println!("{answer}");
-    Ok(())
+    Ok(answer.to_string())
 }
