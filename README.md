@@ -1,5 +1,9 @@
 # code-reflex
 
+[![crates.io](https://img.shields.io/crates/v/code-reflex.svg)](https://crates.io/crates/code-reflex)
+[![GitHub](https://img.shields.io/badge/github-ommaraziz%2Fcode--reflex-blue)](https://github.com/ommaraziz/code-reflex)
+[![license](https://img.shields.io/badge/license-MIT%20%2B%20Commons%20Clause-green)](LICENSE)
+
 **The persistent brain of your codebase.** Index once — then ask where any class, enum, function, constant, hardcoded string, magic number, TODO, or syntax error lives, and get the answer from the index in milliseconds, not from a slow re-scan.
 
 ```
@@ -35,6 +39,14 @@ All index and query features are **fully offline** — the LLM is only used when
 - **Scriptable** — `--json` output on every list command; zero config beyond one env file
 
 ## Install
+
+From crates.io (recommended — puts `reflex` on your PATH):
+
+```bash
+cargo install code-reflex
+```
+
+Or from source:
 
 ```bash
 git clone https://github.com/ommaraziz/code-reflex.git
