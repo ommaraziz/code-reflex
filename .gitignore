@@ -1,0 +1,15 @@
+# Rust
+/target
+
+# code-reflex brains (reproducible from source)
+.reflex/
+
+# Secrets — never commit
+.env
+.env.local
+
+# OS / editor noise
+.DS_Store
+*.log
+.idea/
+.vscode/

@@ -1,0 +1,40 @@
+[package]
+name = "code-reflex"
+version = "0.1.0"
+edition = "2021"
+description = "A persistent brain for your codebase: symbols, issues and hardcoded values - indexed, searchable, refreshed on change."
+license-file = "LICENSE"
+readme = "README.md"
+repository = "https://github.com/ommaraziz/code-reflex"
+homepage = "https://github.com/ommaraziz/code-reflex"
+keywords = ["code-index", "tree-sitter", "sqlite", "developer-tools", "cli"]
+categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "reflex"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+ignore = "0.4"
+libc = "0.2"
+notify = "7"
+rayon = "1"
+regex = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tree-sitter = "0.23"
+tree-sitter-bash = "0.23"
+tree-sitter-c = "0.23"
+tree-sitter-c-sharp = "0.23"
+tree-sitter-cpp = "0.23"
+tree-sitter-go = "0.23"
+tree-sitter-java = "0.23"
+tree-sitter-javascript = "0.23"
+tree-sitter-json = "0.23"
+tree-sitter-python = "0.23"
+tree-sitter-rust = "0.23"
+tree-sitter-typescript = "0.23"
+ureq = { version = "2", features = ["json"] }
